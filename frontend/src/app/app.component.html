@@ -1,0 +1,30 @@
+<ion-app>
+  <ion-menu  side="start" type="push" menuId="main-menu" content-id="main">
+    <ion-content>
+   <div class="menu-header-bg"></div>
+   <div class="header-content">
+     <img src="../assets/images/avatar.png" alt="">
+     <ion-label>
+       <p>Merhaba,</p>
+       <h2>{{username}}</h2>
+     </ion-label>
+   </div>
+
+    <div class="action-button">
+      <ion-button (click)="Logout()">
+      <ion-icon style="padding-right: 5px;" slot="start" name="log-out"></ion-icon>
+      Çıkış Yap
+      </ion-button>
+    </div>
+
+
+    <!-- <ion-list class="menu-items" lines="none">
+      <ion-item (click)="Logout()">
+        <ion-icon  name="log-out"></ion-icon> ÇIKIŞ YAP
+      </ion-item>
+    </ion-list> -->
+
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

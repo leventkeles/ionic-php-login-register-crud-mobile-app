@@ -1,0 +1,92 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<ion-header class="ion-no-border" >
+  <ion-toolbar style="--background: #223235;">
+    <ion-title class="header-text" style=" font-family: 'Fredoka', sans-serif; --color: #09efb6; font-size: 30px;">PARADAR</ion-title>
+
+
+</ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-content>
+    <div class="menu-header-bg"></div>
+    <div class="header-content">
+      <img src="../assets/images/avatar.png" alt="">
+
+      <ion-label>
+        <h2></h2>
+      </ion-label>
+
+      <img class="msg" src="../assets/images/msg.png" alt="" style="margin-left: 100%">
+
+
+    </div>
+
+    <div class="profile">
+      <h4 style="margin-bottom:0 !important;">{{fullname}}</h4>
+      <h6 style="margin-top:0 !important; color: rgb(139, 139, 139);">@{{username}}</h6>
+      <ion-text style=" font-size:14px;  word-break: break-all;
+      word-wrap: break-word; text-align: center;     hyphens: auto;">{{profile_desc}}</ion-text>
+
+
+
+      <!-- <ul style="display: inline-block; position: relative; left:200px; bottom:50px; z-index: 5;  list-style: none; list-style-type: none; display: flex;" class="dropdown__items">
+        <li>🙂</li>
+        <li>😺</li>
+        <li>😽</li>
+        <li>😎</li>
+        <li>🤗</li>
+      </ul> -->
+
+    </div>
+
+
+<ion-col style="display: inline-block; padding-top: 20px; padding-left: 15px;">
+  <ion-row style="padding-right: 5px;   --border-radius: 35px !important; padding-bottom: 10px;">
+    <ion-text style=" background-color:#09efb6; padding: 10px 20px 10px 20px;   border: 1px solid #09efb6; border-radius: 25px;"><ion-icon style="padding-right: 10px;" name="mail"></ion-icon> {{user_mail}}</ion-text>
+  </ion-row>
+  <ion-row style=" --border-radius: 35px !important;">
+    <ion-text style=" background-color:#09efb6; padding: 10px 20px 10px 20px;   border: 1px solid #09efb6; border-radius: 25px;"><ion-icon style="padding-right: 10px;" name="call"></ion-icon>+90 {{user_phone}}</ion-text>
+  </ion-row>
+</ion-col>
+
+     <!-- <ion-list class="menu-items" lines="none">
+       <ion-item (click)="Logout()">
+         <ion-icon  name="log-out"></ion-icon> ÇIKIŞ YAP
+       </ion-item>
+     </ion-list> -->
+
+     </ion-content>
+
+</ion-content>
+
+
+<!-- spec items -->
+<!-- <div class="dropdown">
+  <input type="checkbox" id="dropdown">
+
+  <label class="dropdown__face" for="dropdown">
+    <div  style=" height: 50px;  background-color: #09efb6;"  class="dropdown__text"> <img style="height: 50px;" src="../assets/images/msg.png" alt="" ></div>
+
+
+
+  </label>
+
+  <ul class="dropdown__items">
+    <li>🙂</li>
+    <li>😺</li>
+    <li>😽</li>
+    <li>😎</li>
+    <li>🤗</li>
+  </ul>
+</div>
+
+<svg>
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+    <feBlend in="SourceGraphic" in2="goo" />
+  </filter>
+</svg> -->

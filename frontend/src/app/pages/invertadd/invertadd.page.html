@@ -1,0 +1,83 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<ion-header class="ion-no-border" >
+  <ion-toolbar style="--background: #223235;">
+    <ion-title class="header-text" style=" font-family: 'Fredoka', sans-serif; --color: #09efb6; font-size: 30px;">PARADAR</ion-title>
+
+  <ion-buttons  slot="start">
+    <ion-menu-button style="--color: #09efb6 !important;" menu="main-menu">
+      <ion-icon size="large" name="menu"></ion-icon>
+    </ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refleshPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+<ion-list lines="full">
+
+  <ion-item>
+    <ion-label position="floating">Başlık</ion-label>
+    <ion-input [(ngModel)]="advert_title" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Açıklama</ion-label>
+    <ion-textarea type="text" autoGrow="true"  [(ngModel)]='advert_desc'></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bölge Seç</ion-label>
+    <ion-select [(ngModel)]="location" interface="popover" class="custom-options">
+
+      <ion-select-option value="Altındağ">Altındağ</ion-select-option>
+      <ion-select-option value="Çankaya">Çankaya</ion-select-option>
+      <ion-select-option value="Etimesgut">Etimesgut</ion-select-option>
+      <ion-select-option value="Gölbaşı">Gölbaşı</ion-select-option>
+      <ion-select-option value="Keçiören">Keçiören</ion-select-option>
+      <ion-select-option value="Mamak">Mamak</ion-select-option>
+      <ion-select-option value="Pursaklar">Pursaklar</ion-select-option>
+      <ion-select-option value="Sincan">Sincan</ion-select-option>
+      <ion-select-option value="Yenimahalle">Yenimahalle</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Fiyat gir</ion-label>
+    <ion-input   placeholder="₺" inputmode="decimal" [(ngModel)]="price" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Son tarih</ion-label>
+    <ion-datetime  cancelText="İPTAL" doneText="KAYDET" [(ngModel)]="deadline" pickerFormat="DD MMM YYYY" [min]="minDate" [max]="maxDate" displayFormat="DD-MMM-YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>İş Alanı</ion-label>
+    <ion-select [(ngModel)]="workarea" interface="popover" class="custom-options">
+      <ion-select-option value="Taşıma">Taşıma</ion-select-option>
+      <ion-select-option value="Temizlik">Temizlik</ion-select-option>
+      <ion-select-option value="Yazılım">Yazılım</ion-select-option>
+      <ion-select-option value="Bakım">Bakım</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <input type="file" (change)="onFileChanged($event)">
+  </ion-item>
+
+
+  <ion-row>
+    <ion-col>
+      <ion-button style="--background: #09efb6; --box-shadow:none; font-size: 18px; --color: #272727;" shape="round" expand="block" type="button" (click)="invertAdd()">Ekle</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-list>
+
+
+</ion-content>

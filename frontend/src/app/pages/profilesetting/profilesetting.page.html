@@ -1,0 +1,83 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<ion-header class="ion-no-border" >
+  <ion-toolbar style="--background: #223235;">
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="add"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header-text" style=" font-family: 'Fredoka', sans-serif; --color: #09efb6; font-size: 30px;">PARADAR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="form">
+    <ion-title size="large" style="padding-bottom: 15px;">Profili Güncelle</ion-title>
+
+<ion-row>
+  <ion-col>
+    <ion-item class="input-setting" lines="none">
+      <ion-input  placeholder="E-Mail Adresi" type="text" [(ngModel)]='user_mail'>E-Mail: </ion-input>
+    </ion-item>
+
+
+    <ion-item class="input-setting" lines="none">
+      <ion-input [readonly]="isReadonly()" placeholder="546 273 00 00" type="text" [(ngModel)]='user_phone'>+90 </ion-input>
+    </ion-item>
+
+    <ion-item class="input-setting">
+      <ion-textarea type="text" autoGrow="true"  [(ngModel)]='profile_desc'>
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item class="input-setting" lines="none">
+      <ion-input [readonly]="isReadonly()" type="text" [(ngModel)]='user_birth'>Doğum Tarihi: </ion-input>
+    </ion-item>
+
+    <ion-item class="input-setting" lines="none">
+      <ion-input [readonly]="isReadonly()" type="text" [(ngModel)]='fullname'>İsim: </ion-input>
+    </ion-item>
+
+
+    <ion-item class="input-setting" lines="none">
+      <ion-input  [readonly]="isReadonly()"  placeholder="T.C. Kimlik Numarası" type="text" [(ngModel)]='user_tc'>T.C. Kimlik Numarası: </ion-input>
+    </ion-item>
+
+
+      <div>
+        <ion-item  class="input-setting" lines="none" >
+          <ion-input  type="password" lines="none" [(ngModel)]='password'>Parola: </ion-input>
+        </ion-item>
+
+      </div>
+
+  </ion-col>
+</ion-row>
+
+
+<ion-row style="padding-bottom: 20px; ">
+  <ion-col>
+<ion-button [routerLink]="['../../homepage/']" routerLinkActive="router-link-active"  style="--box-shadow:none; --background: rgb(231, 231, 231); --box-shadow:none; --color: #292929;"  shape="round"  expand="block">
+İptal Et</ion-button>
+
+  </ion-col>
+  <ion-col>
+
+      <ion-button style="--box-shadow:none; --background: #09efb6; --color: #272727;"  shape="round" (click)="Logout()" (click)="updateUser()" expand="block">
+        Güncelle
+      </ion-button>
+
+  </ion-col>
+</ion-row>
+
+
+</div>
+
+<div style="padding: 0 0 10px 25px">
+  Değişikliler bir sonraki girişte yansıyacaktır.
+</div>
+
+</ion-content>

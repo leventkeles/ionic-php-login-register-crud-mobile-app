@@ -1,0 +1,74 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<ion-header class="ion-no-border" >
+  <ion-toolbar style="--background: #223235;">
+    <ion-title class="ion-text-center" style=" font-family: 'Fredoka', sans-serif; --color: #09efb6; font-size: 30px;">PARADAR</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form">
+    <ion-title size="large" style="padding-bottom: 15px;">Kayıt Ol</ion-title>
+    <ion-item class="input-setting" lines="none">
+      <ion-input  placeholder="Kullanıcı Adı" type="text" [(ngModel)]='username'></ion-input>
+    </ion-item>
+    <ion-item class="input-setting" lines="none">
+      <ion-input  placeholder="E-Mail Adresi" type="text" [(ngModel)]='user_mail'></ion-input>
+    </ion-item>
+
+<ion-row>
+  <ion-col>
+    <ion-item  class="input-setting" lines="none">
+      <ion-input placeholder="İsim" type="text" [(ngModel)]='firstname'></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item class="input-setting" lines="none">
+      <ion-input placeholder="Soyisim" type="text" [(ngModel)]='lastname'></ion-input>
+    </ion-item>
+  </ion-col>
+</ion-row>
+
+<ion-item class="input-setting" lines="none">
+  <ion-input  placeholder="T.C. Kimlik Numarası" type="text" [(ngModel)]='user_tc'></ion-input>
+</ion-item>
+
+
+
+<ion-item class="input-setting" lines="none">
+  <ion-input  placeholder="546 273 00 00" type="text" [(ngModel)]='user_phone'>+90</ion-input>
+</ion-item>
+
+
+<ion-item class="datepic">
+  <ion-datetime  [(ngModel)]='user_birth' displayFormat="DD/MMM/YYYY" pickerFormat="DD MMM YYYY" [max]="minDate" placeholder="Doğum Tarihi" ></ion-datetime>
+</ion-item>
+
+
+<div>
+  <ion-item  class="input-setting" lines="none" >
+    <ion-input  lines="none" placeholder="Şifre" [(ngModel)]='password'></ion-input>
+  </ion-item>
+  <ion-item class="input-setting" lines="none">
+    <ion-input  lines="none" placeholder="Şifre Tekrar" [(ngModel)]='confirm_password'></ion-input>
+  </ion-item>
+
+</div>
+</div>
+
+<ion-button style="--background:#09efb6; --box-shadow:none; font-size: 18px; --color: #272727;"  shape="round" (click)="prosesRegister()" expand="block">
+  KAYIT OL
+</ion-button>
+
+
+<p class="footer-text">Mevcut üyeliğiniz var mı? <a (click)="formLogin()" >Giriş Yap</a></p>
+
+</ion-content>
+
+
+
+

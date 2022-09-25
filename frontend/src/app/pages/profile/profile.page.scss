@@ -1,0 +1,251 @@
+:host{
+
+  ion-icon {
+    vertical-align: middle;
+    padding-bottom: 3px;
+  }
+
+  ion-tab-bar{
+    border: 0;
+    background-color: rgba(34, 50, 53, 1);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    ion-icon{
+      font-size: 1.6rem;
+    };
+  }
+
+  ion-tab-button{
+    background-color: rgba(34, 50, 53, 1);
+    max-width: 60px;
+    max-height: 45px;
+  }
+
+  .tab-selected{
+    color: #fdfdfd;
+    background-color: #09efb6;;
+    border-radius: 50px;
+
+  }
+}
+
+ion-header{
+
+  .header-text{
+    background: linear-gradient(to right, #09efb6 20%, #9cffe6 40%, #9cffe6 60%, #09efb6 80%);
+    background-size: 200% auto;
+
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: shine 4s linear infinite;
+    @keyframes shine {
+    to {
+    background-position: 200% center;
+    }
+    }
+  }
+
+  ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+  }
+
+  button, .back-button {
+    position: absolute !important;
+    z-index: 5;
+  }
+
+  ion-toolbar{
+    --min-height:90px!important;
+  }
+
+}
+
+ion-content {
+  --background-color: #e3fbff;
+  --background: linear-gradient(315deg, #e3fbff 0%, #f6ebe6 74%);
+}
+* {
+  font-family: lato;
+}
+
+//232, 75, 182   9, 239, 182
+.menu-header-bg{
+
+  height:200px;
+  background:linear-gradient(0deg, rgba(232, 75, 182, 0.3), rgba(232, 75, 182, 0.3)), url("https://img.freepik.com/free-vector/colorful-stripes-seamless-pattern-fabric-texture-traditional-checkered-ornament-fabric_598264-38.jpg?w=740");
+  background-repeat: repeat;
+  //box-shadow: 0px 1px 10px rgba(29, 29, 29, 0.5);
+  background-size: 200px 200px;
+
+  margin-left: -18px;
+  margin-top: -50px;
+  margin-bottom: 60px;
+}
+
+.header-content{
+
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+
+  img{
+    margin-top: 40%;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 255, 255);
+  }
+
+  .msg{
+    // 09efb6
+    width: 50px;
+    margin-top: 45%;
+    height: 50px;
+    background-color: #09efb6;
+    border-radius: 50%;
+    border: 3px solid #09efb6 !important;
+  }
+
+  h2{
+    margin-top: 60%;
+    padding-left: 15px;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgb(61, 61, 61);
+  }
+
+  p{
+    padding-left: 15px;
+    font-size: 15px;
+    color: rgb(168, 168, 168);
+    font-weight: 100;
+  }
+}
+
+.action-button{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  ion-button{
+    text-transform: capitalize;
+    font-weight: 300;
+    --background: rgb(51, 51, 51);
+    --border-radius: 7px;
+    --box-shadow: none;
+    }
+
+    ion-icon {
+      margin-right: 1px;
+    }
+}
+
+.menu-items{
+margin: 0px;
+
+  ion-icon{
+    margin-right: 20px;
+    color: #86979f;
+  }
+
+  ion-item{
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+
+.profile{
+  padding: 0 10px 10px 20px;
+
+}
+
+
+.dropdown {
+  position: relative;
+  width: 130px;
+  filter: url(#goo);
+
+  &__face,
+  &__items {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  &__face {
+    display: block;
+    position: relative;
+  }
+
+  &__items {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.93, 0.88, 0.1, 0.8);
+
+    &::before {
+      content: "";
+      background-color: #fff;
+      position: absolute;
+      bottom: 100%;
+      right: 20%;
+      height: 40px;
+      width: 20px;
+    }
+  }
+
+  &__arrow {
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) translateY(-50%);
+    transform-origin: right;
+  }
+
+
+
+  input {
+    display: none;
+
+    &:checked ~ .dropdown__items {
+      top: calc(100% + 25px);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+svg {
+  display: none;
+}

@@ -1,0 +1,68 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<ion-header class="ion-no-border" >
+  <ion-toolbar style="--background: #223235;">
+    <ion-title class="header-text" style=" font-family: 'Fredoka', sans-serif; --color: #09efb6; font-size: 30px;">PARADAR</ion-title>
+
+  <ion-buttons  slot="start">
+    <ion-menu-button style="--color: #09efb6 !important;" menu="main-menu">
+      <ion-icon size="large" name="menu"></ion-icon>
+    </ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+    <ion-title style="padding: 25px 0 25px 0; ">İLANLARIM</ion-title>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let advert of adverts" padding size-xs="12" size-sm="12" size-md="12" size-lg="12">
+          <ion-card style="background-color: rgba(255, 255, 255,0.5);" class="no-padding">
+            <ion-row class="progressWrapper">
+              <img style="width: 50% !important;" src="http://192.168.1.27/serverapi1/images/{{advert.invertImg}}"/>
+              <ion-text style=" padding:0 5px 5px 5px; width: 50%; font-size: 11px;
+        overflow: hidden;
+              max-height: 110px;
+
+  ">
+                <h6 style="font-size: 12px !important; text-transform: uppercase;">{{advert.advert_title}}</h6>
+                {{advert.advert_desc}}
+              </ion-text>
+
+
+
+            </ion-row>
+
+            <ion-row style="text-align: center; background-color: rgba(34, 50, 53, 1); color:rgba(231, 231, 231, 1);">
+              <ion-col >
+                <ion-text style="font-size: 10px;" ><ion-icon style="padding-right: 2px;" name="time"></ion-icon> {{ ([advert.deadline | date: 'dd'] - [minDate | date: 'dd']) + ([advert.deadline | date: 'MM'] - [minDate | date: 'MM'])*30 }} gün kaldı</ion-text>
+              </ion-col>
+              <ion-col >
+              <ion-text style="font-size: 10px;" ><ion-icon name="location"></ion-icon> {{advert.location}}</ion-text>
+              </ion-col>
+
+              <ion-col [routerLink]="['../../advert-guncelle/', advert.id]" routerLinkActive="router-link-active" style="background-color: rgb(39, 141, 133) !important; ">
+                <ion-text style="font-size: 10px; " ><ion-icon style="padding-right: 2px;" name="clipboard"></ion-icon>Güncelle</ion-text>
+              </ion-col>
+              <ion-col (click)="deleteAdvert(advert.id)" style="background-color: rgb(141, 39, 39) !important;">
+                <ion-text style="font-size: 10px; " ><ion-icon style="padding-right: 2px;" name="trash"></ion-icon>Sil</ion-text>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+</ion-content>
+
+

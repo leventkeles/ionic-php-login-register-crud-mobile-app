@@ -1,0 +1,55 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<ion-header class="ion-no-border" >
+  <ion-toolbar style="--background: #223235;">
+    <ion-title class="header-text ion-text-center" style=" font-family: 'Fredoka', sans-serif; --color: #09efb6; font-size: 30px;">PARADAR</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content  >
+
+  <img  class="loginbg ion-justify-content-center" src="../../../assets/images/loginbg.png"/>
+
+
+  <div class="form">
+
+    <ion-title class="ion-text-center" size="large" style=" color: white; padding-bottom: 15px;">Giriş Yap</ion-title>
+
+    <ion-item class="input-setting" lines="none">
+      <ion-input  placeholder="Kullanıcı Adı" type="text" [(ngModel)]='username'></ion-input>
+    </ion-item>
+
+    <ion-item class="input-setting" lines="none">
+      <ion-input  autocomplete="new-password" type="password" lines="none" placeholder="Şifre" [(ngModel)]='password'></ion-input>
+    </ion-item>
+  <a routerLink="#" class="forgot-password-link">Şifremi Unuttum</a>
+</div>
+<ion-button style="--background:#09efb6;  font-size: 18px; color:#223235;" shape="round" (click)="prosesLogin()" expand="block" >
+ GİRİŞ YAP
+</ion-button>
+
+<p class="footer-text">Mevcut üyeliğiniz yok mu? <a (click)="formRegister()" >Kayıt Ol</a></p>
+
+
+
+
+
+  <!-- <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+  </ul> -->
+
+
+
+</ion-content>
+
+

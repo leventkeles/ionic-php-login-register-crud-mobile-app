@@ -1,0 +1,92 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<ion-header class="ion-no-border" >
+  <ion-toolbar style="--background: #223235;">
+    <ion-title class="header-text" style=" font-family: 'Fredoka', sans-serif; --color: #09efb6; font-size: 30px;">PARADAR</ion-title>
+
+  <ion-buttons  slot="start">
+    <ion-menu-button style="--color: #09efb6 !important;" menu="main-menu">
+      <ion-icon size="large" name="menu"></ion-icon>
+    </ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+    <img style="width: 100%;" src="../../../assets/images/deneme.png"/>
+
+
+
+
+
+<ion-slides [options]="custom" class="ion-padding">
+
+  <ion-slide>
+    <ion-button>Altındağ</ion-button>
+  </ion-slide>
+  <ion-slide>
+    <ion-button>Çankaya</ion-button>
+  </ion-slide>
+  <ion-slide>
+    <ion-button>Etimesgut</ion-button>
+  </ion-slide>
+  <ion-slide>
+    <ion-button>Gölbaşı</ion-button>
+  </ion-slide>
+  <ion-slide>
+    <ion-button>Keçiören</ion-button>
+  </ion-slide>
+  <ion-slide>
+    <ion-button>Mamak</ion-button>
+  </ion-slide>
+  <ion-slide>
+    <ion-button>Pursaklar</ion-button>
+  </ion-slide>
+  <ion-slide>
+    <ion-button>Sincan</ion-button>
+  </ion-slide>
+  <ion-slide>
+    <ion-button>Yenimahalle</ion-button>
+  </ion-slide>
+
+</ion-slides>
+
+
+
+    <ion-grid style="text-align: center !important;">
+      <ion-row>
+        <ion-col *ngFor="let advert of adverts" padding size-xs="6" size-sm="6" size-md="6" size-lg="6">
+          <ion-card class="no-padding">
+            <ion-row class="progressWrapper">
+              <img [routerLink]="['../advertdetail/', advert.id]" routerLinkActive="router-link-active" src="http://192.168.1.27/serverapi1/images/{{advert.invertImg}}"/>
+              <ion-text style="margin: 10px; font-size: 12px; text-transform: uppercase;">
+                {{advert.advert_title}}
+
+              </ion-text>
+
+            </ion-row>
+
+            <ion-row style="background-color: rgba(34, 50, 53, 1); color:rgba(231, 231, 231, 1);">
+              <ion-col >
+                <ion-text style="font-size: 10px;" ><ion-icon style="padding-right: 2px;" name="time"></ion-icon> {{ ([advert.deadline | date: 'dd'] - [minDate | date: 'dd']) + ([advert.deadline | date: 'MM'] - [minDate | date: 'MM'])*30 }} gün kaldı</ion-text>
+              </ion-col>
+              <!-- <ion-col >
+              <ion-text style="font-size: 10px;" ><ion-icon name="location"></ion-icon> {{advert.location}}</ion-text>
+              </ion-col> -->
+            </ion-row>
+
+          </ion-card>
+
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+</ion-content>
+
+

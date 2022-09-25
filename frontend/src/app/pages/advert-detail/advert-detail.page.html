@@ -1,0 +1,51 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+
+<ion-header no-border-bottom no-border-top no-shadow class="ion-no-border" >
+  <ion-toolbar no-border-bottom no-border-top no-shadow style="--background: #223235;">
+    <ion-title class="header-text" style=" font-family: 'Fredoka', sans-serif; --color: #09efb6; font-size: 30px;">PARADAR</ion-title>
+
+  <ion-buttons  slot="start">
+    <ion-menu-button style="--color: #09efb6 !important;" menu="main-menu">
+      <ion-icon size="large" name="menu"></ion-icon>
+    </ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-row style="background-color: #d6d6d6; color: rgb(49, 49, 49)  !important;">
+    <ion-title  style=" font-size: 15px; background-color: #293d41; color: #fff; padding: 15px;  margin: 0 !important;">{{advert_title}}</ion-title>
+    <img style="width: 100% !important;" src="http://192.168.1.27/serverapi1/images/{{invertImg}}"/>
+    <ion-col style="padding: 10px;" >
+      <ion-text style="font-size: 15px;" ><ion-icon style="padding-right: 6px;" name="time"></ion-icon>{{ ([deadline | date: 'dd'] - [minDate | date: 'dd']) + ([deadline | date: 'MM'] - [minDate | date: 'MM'])*30 }} gün kaldı</ion-text>
+
+    </ion-col >
+    <ion-col style="padding: 10px; background-color: #c0c0c0 !important;"  >
+      <ion-text [routerLink]="['../../profiles/', userId_FK]" routerLinkActive="router-link-active"  style="font-size: 15px;" ><ion-icon style="padding-right: 8px;" name="person"></ion-icon>İletişime Geç</ion-text>
+    </ion-col>
+    <ion-col style="padding: 10px;">
+    <ion-text style="font-size: 15px;" ><ion-icon style="padding-right: 8px;" name="location"></ion-icon>{{location}}</ion-text>
+    </ion-col>
+
+  </ion-row>
+
+
+<ion-row style="padding: 15px !important; --border-radius: 35px !important;">
+  <ion-text style=" background-color:#09efb6; padding: 10px 25px 10px 25px;   border: 1px solid #09efb6; border-radius: 25px;">₺{{price}}</ion-text>
+</ion-row>
+
+
+
+
+
+<ion-row style=" padding: 0 15px 15px 15px !important; ">
+  <ion-text charset="utf8_general_ci" style=" text-align: center; word-break: break-all;
+  word-wrap: break-word;
+ ">{{advert_desc}}</ion-text>
+</ion-row>
+
+</ion-content>

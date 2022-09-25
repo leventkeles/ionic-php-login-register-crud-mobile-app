@@ -1,0 +1,148 @@
+:host{
+  ion-tab-bar{
+    border: 0;
+    background-color: rgba(34, 50, 53, 1);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    ion-icon{
+      font-size: 1.6rem;
+    };
+  }
+
+  ion-tab-button{
+    background-color: rgba(34, 50, 53, 1);
+    max-width: 60px;
+    max-height: 45px;
+  }
+
+  .tab-selected{
+    color: #fdfdfd;
+    background-color: #09efb6;
+    border-radius: 50px;
+
+  }
+}
+
+ion-header{
+
+  .header-text{
+    background: linear-gradient(to right, #09efb6 20%, #9cffe6 40%, #9cffe6 60%, #09efb6 80%);
+    background-size: 200% auto;
+
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: shine 4s linear infinite;
+    @keyframes shine {
+    to {
+    background-position: 200% center;
+    }
+    }
+  }
+
+  ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+  }
+
+  button, .back-button {
+    position: absolute !important;
+    z-index: 5;
+  }
+
+  ion-toolbar{
+    --min-height:90px!important;
+  }
+
+}
+
+ion-content {
+  --background-color: #e3fbff;
+  --background: linear-gradient(315deg, #e3fbff 0%, #f6ebe6 74%);
+}
+* {
+  font-family: lato;
+}
+
+
+ion-toolbar{
+  --min-height:90px!important;
+
+}
+
+
+.toast-wrapper {
+  transform: translateY(270px) !important;
+}
+
+ion-button{
+  display: block;
+  height: 55px;
+  margin-top: 1.5rem;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
+.form{
+  margin-top: 3rem;
+}
+
+
+.input-setting{
+
+  margin: 15px;
+  --border-radius: 30px;
+  font-family: 'Roboto', sans-serif;
+  --background: rgba(255, 255, 255, .5);
+  color: rgb(49, 49, 49);
+
+}
+
+
+ion-content {
+
+  --background: linear-gradient(315deg, #e3fbff 0%, #f6ebe6 74%);
+}
+
+
+.footer-text{
+  text-align: center;
+  font-size: 17px;
+  margin-top: 20%;
+  color: #223235;
+
+  a{
+    text-decoration: none;
+    font-weight: 600;
+    color: #09efb6;
+
+
+  }
+}
+
+.toolbar.no-border, .navbar.no-border{
+  .toolbar-background{
+  border:0;
+  }
+  }
+
+  .datepic{
+    margin: 15px;
+
+    --border-radius: 30px;
+  }
+  .item-interactive {
+
+    --highlight-background: unset;
+    }
